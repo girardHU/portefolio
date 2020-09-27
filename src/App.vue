@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </div>
+    </div> -->
     <router-view/>
   </div>
 </template>
@@ -29,4 +29,17 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+@font-face {
+  font-family: "Roboto Condensed Regular";
+  src: local("Roboto Condensed Regular"),
+    url(./assets/fonts/robotoCondensed/RobotoCondensed-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto Condensed Light";
+  src: local("Roboto Condensed Light"),
+    url(./assets/fonts/robotoCondensed/RobotoCondensed-Light.ttf) format("truetype");
+}
+
 </style>
