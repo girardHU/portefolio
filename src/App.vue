@@ -42,4 +42,10 @@
     url(./assets/fonts/robotoCondensed/RobotoCondensed-Light.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: "Roboto Bold";
+  src: local("Roboto Bold"),
+    url(./assets/fonts/roboto/Roboto-Bold.ttf) format("truetype");
+}
+
 </style>
