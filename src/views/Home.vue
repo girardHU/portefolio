@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
+  <div id="home-wrapper">
     <Background imageName="code-background"/>
-    <NavigationBar imageName="yolo"/>
+    <NavigationBar current="home"/>
     <vue-typed-js :strings="['a FullStack Developer', 'a Tech Enthusiast', 'an Everyday Learner']"
     loop="true"
     smartBackspace="true"
@@ -19,7 +19,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import Background from '@/components/Background.vue' // @ is an alias to /src
-import NavigationBar from '@/components/NavigationBar.vue' // @ is an alias to /src
+import NavigationBar from '@/components/NavigationBar.vue'
 
 @Component({
   components: {
