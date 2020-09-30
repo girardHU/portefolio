@@ -9,7 +9,6 @@
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 
@@ -30,5 +29,4 @@
   src: local("Roboto Bold"),
     url(./assets/fonts/roboto/Roboto-Bold.ttf) format("truetype");
 }
-
 </style>

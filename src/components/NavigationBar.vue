@@ -68,6 +68,7 @@ export default class NavigationBar extends Vue {
 .nav-item.current {
   text-decoration: none;
   background-size: 100% .1em;
+  transition: none;
 }
 
 .nav-item {

@@ -1,7 +1,7 @@
 <template>
-  <div class="backround-wrapper">
-    <img class="background-img" :src="getImage()" alt="background image">
-    <div class="layer">
+  <div id="backround-wrapper">
+    <div class="background-img" :style="getImageAsBackground()">
+      <div class="layer"></div>
     </div>
   </div>
 </template>
@@ -13,8 +13,8 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 export default class Background extends Vue {
   @Prop() private imageName!: string;
 
-  private getImage () {
-    return require(`../assets/images/${this.imageName}.jpg`)
+  private getImageAsBackground () {
+    return { backgroundImage: 'url(' + require(`@/assets/images/${this.imageName}.jpg`) + ')' }
   }
 }
 </script>
@@ -25,10 +25,12 @@ export default class Background extends Vue {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-  object-fit: cover;
   pointer-events: none;
   z-index: -1;
 }
