@@ -9,44 +9,42 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 
 @Component
 export default class NavigationBar extends Vue {
-  @Prop() private current!: string;
-
   private mounted (): void {
     this.setCurrent()
   }
 
   private setCurrent (): void {
     let item
-    switch (this.current) {
-      case 'home':
+    switch (this.$route.name) {
+      case 'Home':
         item = document.querySelector('#home')
         if (item != null) {
           item.classList.add('current')
         }
         break
-      case 'skills':
+      case 'Skills':
         item = document.querySelector('#skills')
         if (item != null) {
           item.classList.add('current')
         }
         break
-      case 'projects':
+      case 'Projects':
         item = document.querySelector('#projects')
         if (item != null) {
           item.classList.add('current')
         }
         break
-      case 'work':
+      case 'Work':
         item = document.querySelector('#work')
         if (item != null) {
           item.classList.add('current')
         }
         break
-      case 'about':
+      case 'About':
         item = document.querySelector('#about')
         if (item != null) {
           item.classList.add('current')

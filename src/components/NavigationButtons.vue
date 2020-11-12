@@ -1,7 +1,7 @@
 <template>
   <div id="navigation-button-wrapper">
-    <img id="back-button" class="navigation-button" :src="sourceBack"/>
-    <img id="next-button" class="navigation-button" :src="sourceNext"/>
+    <img id="back-button" class="navigation-button" v-if="isBack" :src="sourceBack"/>
+    <img id="next-button" class="navigation-button" v-if="isNext" :src="sourceNext"/>
   </div>
 </template>
 
@@ -10,18 +10,18 @@ import { Component, Vue } from 'vue-property-decorator'
 
 @Component
 export default class NavigationButtons extends Vue {
-  private isBack = false;
-  private isNext = false;
+  private isBack = true;
+  private isNext = true;
   private sourceBack = require('@/assets/images/back_button.png')
   private sourceNext = require('@/assets/images/next_button.png')
 
-  private created (): void {
-    this.setCurrent()
+  private mounted (): void {
+    this.setVisibility()
   }
 
-  private setCurrent (): void {
-    this.isBack = false
-    this.isNext = false
+  private setVisibility (): void {
+    if (this.$route.name === 'Home') this.isBack = false
+    if (this.$route.name === 'About') this.isNext = false
   }
 }
 </script>
@@ -29,16 +29,18 @@ export default class NavigationButtons extends Vue {
 <style>
 .navigation-button {
   position: absolute;
-  z-index: 0;
+  z-index: -1;
 }
 
 #back-button {
   top: 48vh;
-  left: 3vw;
+  left: 1.5vw;
 }
 
 #next-button {
   top: 48vh;
-  right: 3vw;
+  right: 1.5vw;
+  max-width: 100%;
+  height: auto;
 }
 </style>
