@@ -1,7 +1,7 @@
 <template>
   <div id="home-wrapper">
     <Background imageName="code-background"/>
-    <NavigationBar current="home"/>
+    <NavigationBar/>
     <vue-typed-js :strings="['a FullStack Developer', 'a Tech Enthusiast', 'an Everyday Learner', 'passionate']"
     loop="true"
     smartBackspace="true"

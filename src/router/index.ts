@@ -10,28 +10,28 @@ Vue.use(VueRouter)
 const routes: Array<RouteConfig> = [
   {
     path: '/',
-    name: 'Home',
+    name: 'home',
     alias: '/home',
     component: Home
   },
   {
     path: '/skills',
-    name: 'Skills',
+    name: 'skills',
     component: Skills
   },
   {
     path: '/projects',
-    name: 'Projects',
+    name: 'projects',
     component: Projects
   },
   {
     path: '/work',
-    name: '',
+    name: 'work',
     component: Work
   },
   {
     path: '/about',
-    name: 'About',
+    name: 'about',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.

@@ -19,32 +19,35 @@ export default class NavigationBar extends Vue {
 
   private setCurrent (): void {
     let item
+    console.log(this.$route.name)
     switch (this.$route.name) {
-      case 'Home':
+      case 'home':
         item = document.querySelector('#home')
         if (item != null) {
           item.classList.add('current')
         }
         break
-      case 'Skills':
+      case 'skills':
         item = document.querySelector('#skills')
         if (item != null) {
           item.classList.add('current')
         }
         break
-      case 'Projects':
+      case 'projects':
         item = document.querySelector('#projects')
+        console.log(item)
         if (item != null) {
           item.classList.add('current')
         }
         break
-      case 'Work':
+      case 'work':
         item = document.querySelector('#work')
+        console.log(item)
         if (item != null) {
           item.classList.add('current')
         }
         break
-      case 'About':
+      case 'about':
         item = document.querySelector('#about')
         if (item != null) {
           item.classList.add('current')

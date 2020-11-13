@@ -4,8 +4,8 @@
     <!-- <img id="next-button" class="navigation-button" v-if="isNext" :src="sourceNext"/> -->
     <div class="navigation-button-container prev-btn" v-if="isBack">
       <div class="navigation-button-center">
-        <button class="navigation-button-btn">
-          <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+        <button class="navigation-button-btn" v-on:click="handlePrev">
+          <svg width="9vw" height="6vh" viewBox="0 0 180 60" class="border">
             <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
             <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
           </svg>
@@ -13,10 +13,10 @@
         </button>
       </div>
     </div>
-    <div class="navigation-button-container next-btn">
+    <div class="navigation-button-container next-btn"  v-if="isNext">
       <div class="navigation-button-center">
-        <button class="navigation-button-btn" v-if="isNext">
-          <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+        <button class="navigation-button-btn" v-on:click="handleNext">
+          <svg viewBox="0 0 180 60" class="border">
             <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
             <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
           </svg>
@@ -34,6 +34,7 @@ import { Component, Vue } from 'vue-property-decorator'
 export default class NavigationButtons extends Vue {
   private isBack = true;
   private isNext = true;
+  private routes = ['home', 'skills', 'projects', 'work', 'about']
   // private sourceBack = require('@/assets/images/back_button.png')
   // private sourceNext = require('@/assets/images/next_button.png')
 
@@ -42,8 +43,20 @@ export default class NavigationButtons extends Vue {
   }
 
   private setVisibility (): void {
-    if (this.$route.name === 'Home') this.isBack = false
-    if (this.$route.name === 'About') this.isNext = false
+    if (this.$route.name === this.routes[0]) this.isBack = false
+    if (this.$route.name === this.routes[this.routes.length - 1]) this.isNext = false
+  }
+
+  private handlePrev (): void {
+    console.log('handlePrev')
+    const currentIndex = this.routes.findIndex(element => element === this.$route.name)
+    this.$router.push(this.routes[currentIndex - 1])
+  }
+
+  private handleNext (): void {
+    console.log('handleNext')
+    const currentIndex = this.routes.findIndex(element => element === this.$route.name)
+    this.$router.push(this.routes[currentIndex + 1])
   }
 }
 </script>
@@ -93,8 +106,8 @@ export default class NavigationButtons extends Vue {
 }
 
 .navigation-button-btn {
-  width: 180px;
-  height: 60px;
+  width: 9vw;
+  height: 6vh;
   cursor: pointer;
   background: transparent;
   border: 1px solid #3fb9847a;
@@ -107,6 +120,8 @@ svg {
   position: absolute;
   left: 0;
   top: 0;
+  height: 6vh;
+  width: 9vw;
   fill: none;
   stroke: #fff;
   stroke-dasharray: 150 480;
