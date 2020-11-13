@@ -66,6 +66,15 @@ export default class NavigationBar extends Vue {
   justify-content: space-evenly;
 }
 
+@keyframes slideBeneath {
+    0% {
+        background-size: 0% .1em;
+    }
+    100% {
+        background-size: 100% .1em;
+    }
+}
+
 .nav-item.current {
   text-decoration: none;
   background-size: 100% .1em;

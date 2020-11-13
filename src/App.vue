@@ -29,4 +29,10 @@
   src: local("Roboto Bold"),
     url(./assets/fonts/roboto/Roboto-Bold.ttf) format("truetype");
 }
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: local("Roboto Slab"),
+    url(./assets/fonts/robotoSlab/RobotoSlab-Regular.ttf) format("truetype");
+}
 </style>
