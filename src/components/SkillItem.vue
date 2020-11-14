@@ -1,10 +1,8 @@
 <template>
   <div id="skill-item-wrapper">
-    <!-- <div class="container"> -->
       <div class="circle">
-        <img :src="getImageSource()" alt="vuejs logo">
+        <img :src="getImageSource()" :alt="imageName">
       </div>
-    <!-- </div> -->
   </div>
 </template>
 
@@ -24,16 +22,14 @@ export default class SkillItem extends Vue {
 <style scoped>
 .circle {
   position: relative;
-  /* display: inline-block; */
   height: 7vw;
   width: 7vw;
   line-height: 60px;
 
-  -moz-border-radius: 50%; /* or 30px */
-  border-radius: 50%; /* or 30px */
+  -moz-border-radius: 50%;
+  border-radius: 50%;
 
   background-color: rgba(255, 255, 255, 0.300);
-  /* color: white; */
   text-align: center;
   font-size: 2em;
 }
@@ -47,9 +43,5 @@ export default class SkillItem extends Vue {
   bottom: 0;
   width: 100%;
   height: auto;
-  /* display: block; */
-  /* height: auto;
-  width: 100%; */
-  /* transform: translateY(5%); */
 }
 </style>

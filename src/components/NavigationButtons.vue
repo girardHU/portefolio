@@ -1,11 +1,9 @@
 <template>
   <div id="navigation-button-wrapper">
-    <!-- <img id="back-button" class="navigation-button" v-if="isBack" :src="sourceBack"/> -->
-    <!-- <img id="next-button" class="navigation-button" v-if="isNext" :src="sourceNext"/> -->
     <div class="navigation-button-container prev-btn" v-if="isBack">
       <div class="navigation-button-center">
         <button class="navigation-button-btn" v-on:click="handlePrev">
-          <svg width="9vw" height="6vh" viewBox="0 0 180 60" class="border">
+          <svg viewBox="0 0 180 60" class="border">
             <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
             <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
           </svg>
@@ -35,8 +33,6 @@ export default class NavigationButtons extends Vue {
   private isBack = true;
   private isNext = true;
   private routes = ['home', 'skills', 'projects', 'work', 'about']
-  // private sourceBack = require('@/assets/images/back_button.png')
-  // private sourceNext = require('@/assets/images/next_button.png')
 
   private mounted (): void {
     this.setVisibility()
@@ -48,13 +44,11 @@ export default class NavigationButtons extends Vue {
   }
 
   private handlePrev (): void {
-    console.log('handlePrev')
     const currentIndex = this.routes.findIndex(element => element === this.$route.name)
     this.$router.push(this.routes[currentIndex - 1])
   }
 
   private handleNext (): void {
-    console.log('handleNext')
     const currentIndex = this.routes.findIndex(element => element === this.$route.name)
     this.$router.push(this.routes[currentIndex + 1])
   }

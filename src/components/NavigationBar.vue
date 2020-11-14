@@ -19,7 +19,6 @@ export default class NavigationBar extends Vue {
 
   private setCurrent (): void {
     let item
-    console.log(this.$route.name)
     switch (this.$route.name) {
       case 'home':
         item = document.querySelector('#home')
@@ -35,14 +34,12 @@ export default class NavigationBar extends Vue {
         break
       case 'projects':
         item = document.querySelector('#projects')
-        console.log(item)
         if (item != null) {
           item.classList.add('current')
         }
         break
       case 'work':
         item = document.querySelector('#work')
-        console.log(item)
         if (item != null) {
           item.classList.add('current')
         }
