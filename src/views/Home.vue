@@ -38,7 +38,6 @@ export default class Home extends Vue { }
 .home-text {
   text-transform: uppercase;
   position: fixed;
-  cursor: default;
 }
 
 #hello-text {
