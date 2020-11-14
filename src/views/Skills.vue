@@ -38,7 +38,12 @@ export default class Skills extends Vue { }
 
 <style scoped>
 .skill-items-container {
+  margin: 10vh auto auto auto;
+  width: 34vw;
+  height: 20vw;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 </style>
