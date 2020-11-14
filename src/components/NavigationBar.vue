@@ -58,21 +58,12 @@ export default class NavigationBar extends Vue {
 }
 </script>
 
-<style>
+<style scoped>
 #navigation-wrapper {
   display: flex;
   width: 40vw;
   margin: 3.5vh auto;
   justify-content: space-evenly;
-}
-
-@keyframes slideBeneath {
-    0% {
-        background-size: 0% .1em;
-    }
-    100% {
-        background-size: 100% .1em;
-    }
 }
 
 .nav-item.current {

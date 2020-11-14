@@ -61,7 +61,7 @@ export default class NavigationButtons extends Vue {
 }
 </script>
 
-<style>
+<style scoped>
 .navigation-button {
   position: absolute;
   z-index: -1;

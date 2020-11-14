@@ -20,7 +20,7 @@ export default class Background extends Vue {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 .background-img {
   position: absolute;
   top: 0;
