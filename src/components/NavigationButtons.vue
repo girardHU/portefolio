@@ -61,26 +61,14 @@ export default class NavigationButtons extends Vue {
   z-index: -1;
 }
 
-#back-button {
-  top: 48vh;
-  left: 1.5vw;
-}
-
-#next-button {
-  top: 48vh;
-  right: 1.5vw;
-  max-width: 100%;
-  height: auto;
-}
-
 .navigation-button-container.prev-btn {
   left: 6.5vw;
-  top: 50vh;
+  top: 49vh;
 }
 
 .navigation-button-container.next-btn {
   right: 1.5vw;
-  top: 50vh;
+  top: 49vh;
 }
 
 .navigation-button-container {

@@ -45,8 +45,10 @@ export default class ProjectItem extends Vue {
 
 <style scoped>
 .project-item {
-  height: 35vh;
-  width: 12vw;
+  /* height: 17.3vw;
+  width: 12vw; */
+  height: calc(130px + 10vw);
+  width: calc(95px + 8vw);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -56,8 +58,8 @@ export default class ProjectItem extends Vue {
 }
 
 .project-child {
-  margin: 0 auto 0 auto;
-  font-size: 0.65vw;
+  margin: 0 auto;
+  font-size: calc(30% + 0.5vw);
   color: white;
 }
 

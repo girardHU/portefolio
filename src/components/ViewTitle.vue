@@ -19,7 +19,7 @@ h1 {
   font-family: "Roboto Slab";
   color: white;
   text-align: center;
-  margin: 9vh 0 4vh 0;
+  margin: 8vh 0 4vh 0;
   font-size: 2vw;
 }
 </style>

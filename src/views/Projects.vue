@@ -45,6 +45,7 @@ export default class Projects extends Vue { }
   justify-content: space-around;
 }
 .prj-item {
+  flex: 1 0 21%;
   margin-bottom: 2%;
 }
 </style>

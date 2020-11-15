@@ -74,7 +74,7 @@ export default class NavigationBar extends Vue {
   text-transform: uppercase;
   font-weight: bold;
   font-family: "Roboto Bold";
-  font-size: 24px;
+  font-size: calc(10% + 1.25vw );
   text-decoration: none;
 
   background: linear-gradient(#3FB984, #3FB984) bottom / 0% .1em no-repeat;
