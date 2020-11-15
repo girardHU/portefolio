@@ -1,13 +1,13 @@
 <template>
   <div id="project-item-wrapper">
-    <div class="project">
-      <img :src="getImageSource()" :alt="image" class="screenshot">
-      <h5>{{ name }}</h5>
-      <h6>{{ startDate }} - {{ endDate }}</h6>
-      <h6>INVESTIGATE ON THIS PROJECT</h6>
-      <div class="link-container">
-        <img src="@/assets/images/link-icon.png" alt="link-icon" class="link-icon">
-        <img src="@/assets/images/github-icon.png" alt="github-icon" class="github-icon">
+    <div class="project-item">
+      <img :src="getImageSource()" :alt="image" class="screenshot project-child">
+      <h5 class="title project-child">{{ name }}</h5>
+      <h6 class="project-child">{{ startDate }} - {{ endDate }}</h6>
+      <h6 class="project-child">INVESTIGATE ON THIS PROJECT</h6>
+      <div class="link-container project-child">
+        <img src="@/assets/images/link-icon.png" :class="{clickable: projectLink}" @click="redirectProject" alt="link-icon" class="link-icon icon">
+        <img src="@/assets/images/github-icon.png" :class="{clickable: githubLink}" @click="redirectGithub" alt="github-icon" class="github-icon icon">
       </div>
     </div>
   </div>
@@ -22,11 +22,72 @@ export default class ProjectItem extends Vue {
   @Prop() private image!: string;
   @Prop() private startDate!: string;
   @Prop({ default: 'running' }) private endDate!: string;
-  @Prop({ default: 'none' }) private projectLink!: string;
-  @Prop({ default: 'none' }) private githubLink!: string;
+  @Prop({ default: false }) private projectLink!: string;
+  @Prop({ default: false }) private githubLink!: string;
 
   private getImageSource () {
     return require(`@/assets/images/${this.image}.jpg`)
   }
+
+  private redirectProject () {
+    if (this.projectLink) {
+      window.open(this.projectLink)
+    }
+  }
+
+  private redirectGithub () {
+    if (this.githubLink) {
+      window.open(this.githubLink)
+    }
+  }
 }
 </script>
+
+<style scoped>
+.project-item {
+  height: 35vh;
+  width: 12vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #232f5977;
+  margin: auto;
+  border-radius: 2%;
+}
+
+.project-child {
+  margin: 0 auto 0 auto;
+  font-size: 0.65vw;
+  color: white;
+}
+
+.project-item .title {
+  font-size: 0.85vw;
+}
+
+.clickable {
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+.screenshot {
+  width: 95%;
+  height: auto;
+  border-radius: 3%;
+  margin-top: -5%;
+}
+
+.link-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.icon {
+  width: 10%;
+  height: auto;
+}
+
+.clickable:hover {
+transform: scale(1.3);
+}
+</style>
