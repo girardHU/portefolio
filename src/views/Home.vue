@@ -40,7 +40,7 @@ export default class Home extends Vue { }
   position: fixed;
 }
 
-.home.text.hello-text {
+.home-text.hello-text {
   text-align: left;
   font-family: "Roboto Condensed Regular";
   font-size: 3vw;
@@ -49,7 +49,7 @@ export default class Home extends Vue { }
   color: white;
 }
 
-.home.text.footer-text {
+.home-text.footer-text {
   font-family: "Roboto Condensed Light";
   font-size: 1vw;
   bottom: 2vh;
