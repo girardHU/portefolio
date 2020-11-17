@@ -1,5 +1,5 @@
 <template>
-  <div id="project-item-wrapper">
+  <div class="project-item-wrapper">
     <div class="project-item">
       <img :src="getImageSource()" :alt="image" class="screenshot project-child">
       <h5 class="title project-child">{{ name }}</h5>

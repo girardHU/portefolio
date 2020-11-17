@@ -1,5 +1,5 @@
 <template>
-  <div id="navigation-button-wrapper">
+  <div class="navigation-button-wrapper">
     <div class="navigation-button-container prev-btn" v-if="isBack">
       <div class="navigation-button-center">
         <button class="navigation-button-btn" v-on:click="handlePrev">

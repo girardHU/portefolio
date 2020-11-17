@@ -1,5 +1,5 @@
 <template>
-  <div id="backround-wrapper">
+  <div class="backround-wrapper">
     <div class="background-img" :style="getImageAsBackground()">
       <div class="layer"></div>
     </div>

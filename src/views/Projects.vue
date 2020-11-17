@@ -1,5 +1,5 @@
 <template>
-  <div id="projects-wrapper">
+  <div class="projects-wrapper">
     <Background imageName="working-background"/>
     <NavigationBar/>
     <ViewTitle titleText="MY PROJECTS"/>

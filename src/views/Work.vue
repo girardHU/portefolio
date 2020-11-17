@@ -1,5 +1,5 @@
 <template>
-  <div id="work-wrapper">
+  <div class="work-wrapper">
     <Background imageName="road-background"/>
     <NavigationBar/>
     <ViewTitle titleText="MY EXPERIENCE"/>

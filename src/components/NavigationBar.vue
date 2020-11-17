@@ -1,10 +1,10 @@
 <template>
-  <div id="navigation-wrapper">
-    <router-link to="/home" id="home" class="nav-item">Home</router-link>
-    <router-link to="/skills" id="skills" class="nav-item">Skills</router-link>
-    <router-link to="/projects" id="projects" class="nav-item">Projects</router-link>
-    <router-link to="/work" id="work" class="nav-item">Work</router-link>
-    <router-link to="/about" id="about" class="nav-item">About</router-link>
+  <div class="navigation-wrapper">
+    <router-link to="/home" class="nav-item home">Home</router-link>
+    <router-link to="/skills" class="nav-item skills">Skills</router-link>
+    <router-link to="/projects" class="nav-item projects">Projects</router-link>
+    <router-link to="/work" class="nav-item work">Work</router-link>
+    <router-link to="/about" class="nav-item about">About</router-link>
   </div>
 </template>
 
@@ -21,31 +21,31 @@ export default class NavigationBar extends Vue {
     let item
     switch (this.$route.name) {
       case 'home':
-        item = document.querySelector('#home')
+        item = document.querySelector('.home')
         if (item != null) {
           item.classList.add('current')
         }
         break
       case 'skills':
-        item = document.querySelector('#skills')
+        item = document.querySelector('.skills')
         if (item != null) {
           item.classList.add('current')
         }
         break
       case 'projects':
-        item = document.querySelector('#projects')
+        item = document.querySelector('.projects')
         if (item != null) {
           item.classList.add('current')
         }
         break
       case 'work':
-        item = document.querySelector('#work')
+        item = document.querySelector('.work')
         if (item != null) {
           item.classList.add('current')
         }
         break
       case 'about':
-        item = document.querySelector('#about')
+        item = document.querySelector('.about')
         if (item != null) {
           item.classList.add('current')
         }
@@ -56,7 +56,7 @@ export default class NavigationBar extends Vue {
 </script>
 
 <style scoped>
-#navigation-wrapper {
+.navigation-wrapper {
   display: flex;
   width: 40vw;
   margin: 3.5vh auto;

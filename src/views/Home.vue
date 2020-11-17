@@ -1,17 +1,17 @@
 <template>
-  <div id="home-wrapper">
+  <div class="home-wrapper">
     <Background imageName="code-background"/>
     <NavigationBar/>
     <vue-typed-js :strings="['a FullStack Developer', 'a Tech Enthusiast', 'an Everyday Learner', 'passionate']"
     loop="true"
     smartBackspace="true"
     backDelay="1500">
-    <h1 id="hello-text" class="home-text">
+    <h1 class="home-text hello-text">
       Hello! My name is Hugo Girard and I am<br><span class="typing"></span>
     </h1>
     </vue-typed-js>
     <NavigationButtons/>
-    <h3 id="footer-text" class="home-text">
+    <h3 class="home-text footer-text">
       this website is showcased in english, yet i am french
     </h3>
   </div>
@@ -40,7 +40,7 @@ export default class Home extends Vue { }
   position: fixed;
 }
 
-#hello-text {
+.home.text.hello-text {
   text-align: left;
   font-family: "Roboto Condensed Regular";
   font-size: 3vw;
@@ -49,7 +49,7 @@ export default class Home extends Vue { }
   color: white;
 }
 
-#footer-text {
+.home.text.footer-text {
   font-family: "Roboto Condensed Light";
   font-size: 1vw;
   bottom: 2vh;

@@ -1,5 +1,5 @@
 <template>
-  <div id="skills-wrapper">
+  <div class="skills-wrapper">
     <Background imageName="toolbelt-background"/>
     <NavigationBar/>
     <ViewTitle titleText="MY SKILL SET"/>

@@ -1,5 +1,5 @@
 <template>
-  <div id="skill-item-wrapper">
+  <div class="skill-item-wrapper">
       <div class="circle">
         <img :src="getImageSource()" :alt="imageName">
       </div>

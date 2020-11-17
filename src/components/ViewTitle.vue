@@ -1,5 +1,5 @@
 <template>
-  <div id="view-title-wrapper">
+  <div class="view-title-wrapper">
     <h1>{{titleText}}</h1>
   </div>
 </template>

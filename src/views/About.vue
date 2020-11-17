@@ -1,5 +1,5 @@
 <template>
-  <div id="about-wrapper">
+  <div class="about-wrapper">
     <Background imageName="moi-background"/>
     <NavigationBar/>
     <ViewTitle titleText="ABOUT ME"/>
