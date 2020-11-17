@@ -26,7 +26,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue, Watch } from 'vue-property-decorator'
 
 @Component
 export default class NavigationButtons extends Vue {
@@ -35,6 +35,11 @@ export default class NavigationButtons extends Vue {
   private routes = ['home', 'skills', 'projects', 'work', 'about']
 
   private mounted (): void {
+    this.setVisibility()
+  }
+
+  @Watch('$route')
+  onPropertyChange (): void {
     this.setVisibility()
   }
 
@@ -95,7 +100,7 @@ export default class NavigationButtons extends Vue {
   border: 1px solid #3fb9847a;
   outline: none;
   /* border-radius: 4cm; */
-  transition: 1s ease-in-out;
+  transition: 0.6s ease-in-out;
 }
 
 svg {
@@ -108,11 +113,11 @@ svg {
   stroke: #fff;
   stroke-dasharray: 150 480;
   stroke-dashoffset: 150;
-  transition: 1s ease-in-out;
+  transition: 0.6s ease-in-out;
 }
 
 .navigation-button-btn:hover {
-  transition: 1s ease-in-out;
+  transition: 0.6s ease-in-out;
   background: #3fb9842f;
 }
 

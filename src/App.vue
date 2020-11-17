@@ -1,8 +1,25 @@
 <template>
   <div id="app">
+    <NavigationBar/>
+    <NavigationButtons/>
     <router-view/>
   </div>
 </template>
+
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+import NavigationBar from '@/components/NavigationBar.vue'
+import NavigationButtons from '@/components/NavigationButtons.vue'
+
+@Component({
+  components: {
+    NavigationBar,
+    NavigationButtons
+  }
+})
+
+export default class App extends Vue { }
+</script>
 
 <style>
 #app {
