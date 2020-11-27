@@ -40,12 +40,21 @@ export default class NavigationButtons extends Vue {
 
   @Watch('$route')
   onPropertyChange (): void {
+    console.log('in watch $route')
     this.setVisibility()
   }
 
   private setVisibility (): void {
-    if (this.$route.name === this.routes[0]) this.isBack = false
-    if (this.$route.name === this.routes[this.routes.length - 1]) this.isNext = false
+    if (this.$route.name === this.routes[0]) {
+      this.isBack = false
+    } else {
+      this.isBack = true
+    }
+    if (this.$route.name === this.routes[this.routes.length - 1]) {
+      this.isNext = false
+    } else {
+      this.isNext = true
+    }
   }
 
   private handlePrev (): void {

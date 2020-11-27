@@ -9,7 +9,6 @@
       Hello! My name is Hugo Girard and I am<br><span class="typing"></span>
     </h1>
     </vue-typed-js>
-    <!-- <NavigationButtons/> -->
     <h3 class="home-text footer-text">
       this website is showcased in english, yet i am french
     </h3>
@@ -19,14 +18,10 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import Background from '@/components/Background.vue' // @ is an alias to /src
-// import NavigationBar from '@/components/NavigationBar.vue'
-import NavigationButtons from '@/components/NavigationButtons.vue'
 
 @Component({
   components: {
-    Background,
-    // NavigationBar,
-    NavigationButtons
+    Background
   }
 })
 
