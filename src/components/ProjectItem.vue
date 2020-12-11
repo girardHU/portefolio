@@ -67,6 +67,10 @@ export default class ProjectItem extends Vue {
   font-size: 0.85vw;
 }
 
+.icon {
+  cursor: not-allowed;
+}
+
 .clickable {
   cursor: pointer;
   transition: transform .2s;
