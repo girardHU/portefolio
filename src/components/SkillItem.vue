@@ -1,29 +1,27 @@
 <template>
   <div class="skill-item-wrapper">
-      <div class="item-hints">
-        <div class="circle hint" data-position="4">
-          <img :src="getImageSource()" :alt="imageName">
-          <span class="hint-radius"></span>
-          <div class="hint-content do--split-children">
-            <!-- <p>The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p> -->
-            <p>{{ tooltipText }}</p>
-          </div>
-        </div>
-      </div>
+    <div class="circle">
+      <img :src="getImageSource()" :alt="imageName" @click="selectSkill">
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
-import '@/components/vapor-tooltip.css'
 
 @Component
 export default class SkillItem extends Vue {
   @Prop() private imageName!: string;
-  @Prop() private tooltipText!: string;
+  @Prop() private descrText!: string;
 
   private getImageSource () {
     return require(`@/assets/images/${this.imageName}.png`)
+  }
+
+  private selectSkill (event: any) {
+    const elem = event.target.parentElement
+    elem.style.animation = 'slidecenter 500ms'
+    // elem.classList.add('center')
   }
 }
 </script>
@@ -50,5 +48,33 @@ export default class SkillItem extends Vue {
   bottom: 0;
   width: 100%;
   height: auto;
+}
+
+.circle img:hover{
+  cursor: pointer;
+  animation: wiggle 95ms 2 linear;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+   30% { transform: rotate(0deg); }
+   35% { transform: rotate(4deg); }
+   65% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes slidecenter {
+  /* from {
+    margin-left: 100%;
+    width: 300%;
+  } */
+
+  to {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -7vw;
+    margin-top: -7vh;
+  }
 }
 </style>
